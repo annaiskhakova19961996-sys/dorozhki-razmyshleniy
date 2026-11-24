@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#54b873">
+  <meta name="description" content="Дорожки размышлений — развивающие задания, логика и маленькие открытия каждый день.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Дорожки размышлений — учимся думать</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к заданиям</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Дорожки размышлений — главная"><img src="icon.svg" alt="" width="40" height="40"><span>Дорожки<small>размышлений</small></span></a>
+    <nav class="topnav" aria-label="Основная навигация">
+      <button class="nav-item active" data-view="tasks"><span aria-hidden="true">▦</span> Задания</button>
+      <button class="nav-item" data-view="progress"><span aria-hidden="true">◎</span> Успехи</button>
+      <button class="nav-item" data-view="collection"><span aria-hidden="true">◇</span> Коллекция</button>
+      <button class="nav-item" data-view="journal"><span aria-hidden="true">▤</span> Дневник</button>
+    </nav>
+    <div class="account"><span class="star-count" title="Заработанные звёзды"><span aria-hidden="true">★</span> <b id="header-stars">0</b></span><button class="login" data-action="account"><span aria-hidden="true">⌑</span> <span>Войти</span></button></div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar"><div class="sidebar-label">ВЫБЕРИ ДОРОЖКУ</div><nav id="categories" aria-label="Категории заданий"></nav><div class="sidebar-foot"><span>✦</span> Маленькие шаги.<br>Большие открытия.</div></aside>
+    <main id="main" tabindex="-1"></main>
+    <aside class="rightbar" aria-label="Твой прогресс">
+      <button class="daily-promo" data-action="daily"><span class="promo-icon" aria-hidden="true">✧</span><span>Открытие дня<small>Одно задание — новый шаг</small></span></button>
+      <section class="panel progress-panel"><div class="panel-title"><span class="badge-icon violet" aria-hidden="true">1</span><div><h2 id="rank-title">Первый шаг</h2><p id="rank-subtitle">Начало большой дорожки</p></div></div><div class="meter" id="rank-meter" role="progressbar" aria-label="Прогресс уровня" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0"><i></i></div><div class="panel-title second"><span class="cup" aria-hidden="true">✦</span><div><h2>К новым вершинам</h2><p id="completed-label">0 заданий пройдено</p></div></div></section>
+      <section class="panel"><div class="panel-title"><span class="bulb" aria-hidden="true">☀</span><div><h2>Цель дня</h2><p id="daily-label">Реши 3 задания</p></div></div><div class="week" id="week"></div></section>
+      <button class="panel certificate" data-view="collection"><h2>Мои открытия</h2><div class="certificate-row"><span><b id="collection-count">0</b> / 6</span><span class="certificate-icon" aria-hidden="true">▧</span></div><div class="meter" id="collection-meter"><i></i></div><p>Собирай значки за успехи <span aria-hidden="true">✦</span></p></button>
+      <div class="local-note"><span aria-hidden="true">▣</span><p>Прогресс на этом устройстве<small id="storage-status">Можно продолжить позже</small></p></div>
+    </aside>
+  </div>
+  <dialog id="modal" aria-labelledby="dialog-title"><button class="close" aria-label="Закрыть окно" data-action="close">×</button><div id="modal-content"></div></dialog>
+  <div class="toast" role="status" id="toast"></div>
+</body>
+</html>
